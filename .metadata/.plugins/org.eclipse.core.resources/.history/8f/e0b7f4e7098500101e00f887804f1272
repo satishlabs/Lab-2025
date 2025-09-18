@@ -1,0 +1,19 @@
+package com.satishlabs.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.satishlabs.repository.UserRepository;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+	private final UserRepository repo;
+
+	public UserController(UserRepository repo) {
+		super();
+		this.repo = repo;
+	}
+	
+	
+}

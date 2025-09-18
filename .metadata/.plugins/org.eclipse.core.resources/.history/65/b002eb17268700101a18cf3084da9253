@@ -1,0 +1,11 @@
+package com.satishlabs.util.security;
+
+
+import io.jsonwebtoken.security.Keys;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JwtTokenUtil {
+	private final Keys key;
+	private final long jwtExpiration;
+}

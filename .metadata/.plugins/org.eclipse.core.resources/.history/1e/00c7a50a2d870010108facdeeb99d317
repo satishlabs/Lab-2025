@@ -1,0 +1,36 @@
+package com.satishlabs.controller;
+
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import com.satishlabs.service.AuthService;
+
+@RestController
+@RequestMapping("/api/auth")
+public class AuthController {
+
+	private final AuthService authService;
+
+	public AuthController(AuthService authService) {
+		this.authService = authService;
+	}
+
+	@PostMapping("/register")
+    public ResponseEntity<String> register(@RequestBody RegisterRequest request) {
+        return ResponseEntity.ok(authService.register(request));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
+        String token = authService.login(request);
+        return ResponseEntity.ok(new AuthResponse(token));
+    }
+
+    @GetMapping("/profile")
+    public ResponseEntity<UserResponse> profile(Authentication authentication) {
+        String traceId = MDC.get("traceId"); // Telemetry traceId
+        System.out.println("TraceId for request: " + traceId);
+        return ResponseEntity.ok(authService.getProfile(authentication.getName()));
+    }
+}

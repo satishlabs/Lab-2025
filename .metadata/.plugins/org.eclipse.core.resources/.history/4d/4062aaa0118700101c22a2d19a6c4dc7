@@ -1,0 +1,8 @@
+package com.str;
+
+public class LongestStringPlaindrom {
+	public static void main(String[] args) {
+		String str = "babad";
+		
+	}
+}

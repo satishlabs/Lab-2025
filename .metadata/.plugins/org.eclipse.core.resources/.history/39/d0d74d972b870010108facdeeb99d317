@@ -1,0 +1,5 @@
+package com.satishlabs.dto;
+
+public class RegisterRequest {
+
+}

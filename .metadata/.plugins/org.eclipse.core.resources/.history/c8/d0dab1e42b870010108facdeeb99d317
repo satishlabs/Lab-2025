@@ -1,0 +1,7 @@
+package com.satishlabs.service.impl;
+
+import com.satishlabs.service.AuthService;
+
+public class AuthServiceImpl implements AuthService{
+
+}

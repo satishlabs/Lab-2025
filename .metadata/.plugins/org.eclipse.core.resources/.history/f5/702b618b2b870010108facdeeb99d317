@@ -1,0 +1,7 @@
+package com.satishlabs.dto;
+
+@Data
+@AllArgsConstructor
+public class AuthResponse {
+    private String token;
+}

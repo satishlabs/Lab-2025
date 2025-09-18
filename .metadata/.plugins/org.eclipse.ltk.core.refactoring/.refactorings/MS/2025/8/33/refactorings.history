@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract local variable &apos;sorted&apos; from expression &apos;map.entrySet().stream().sorted((e1,e2) -&gt; e2.getValue().compareTo(e1.getValue()))&apos;&#x0D;&#x0A;- Original project: &apos;MS&apos;&#x0D;&#x0A;- Variable name: &apos;sorted&apos;&#x0D;&#x0A;- Destination method: &apos;com.arr.ThirdMostRepeatedChar.main(...)&apos;&#x0D;&#x0A;- Variable expression: &apos;map.entrySet().stream().sorted((e1,e2) -&gt; e2.getValue().compareTo(e1.getValue()))&apos;&#x0D;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;sorted&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;com.arr{ThirdMostRepeatedChar.java" name="sorted" replace="true" replaceAllInThisFile="false" selection="522 79" stamp="1754991171714" varType="false" version="1.0"/>
+</session>

@@ -1,0 +1,75 @@
+package com.satishlabs.service.impl;
+
+import java.util.Collections;
+
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.satishlabs.dto.AuthRequest;
+import com.satishlabs.dto.RegisterRequest;
+import com.satishlabs.dto.UserResponse;
+import com.satishlabs.dto.UserResponseDto;
+import com.satishlabs.mapper.UserMapper;
+import com.satishlabs.model.Role;
+import com.satishlabs.model.User;
+import com.satishlabs.repository.RoleRepository;
+import com.satishlabs.repository.UserRepository;
+import com.satishlabs.security.JwtTokenUtil;
+import com.satishlabs.service.AuthService;
+import com.satishlabs.validator.UserRegistrationValidator;
+
+@Service
+public class AuthServiceImpl implements AuthService{
+	private final UserRepository userRepository;
+    private final RoleRepository roleRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final JwtTokenUtil jwtTokenUtil;
+    private final AuthenticationManager authenticationManager;
+    private final UserRegistrationValidator registrationValidator;
+
+    public AuthServiceImpl(UserRepository userRepository, RoleRepository roleRepository,
+                           PasswordEncoder passwordEncoder, JwtTokenUtil jwtTokenUtil,
+                           AuthenticationManager authenticationManager,
+                           UserRegistrationValidator registrationValidator) {
+        this.userRepository = userRepository;
+        this.roleRepository = roleRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.jwtTokenUtil = jwtTokenUtil;
+        this.authenticationManager = authenticationManager;
+        this.registrationValidator = registrationValidator;
+    }
+    
+	@Override
+	public String register(RegisterRequest request) {
+		if(userRepository.existsByUsername(request.getUsername())) {
+			throw new RuntimeException("Username already exists");
+		}
+		Role userRole = roleRepository.findByName("USER")
+				.orElseGet(() -> roleRepository.save(Role.builder().name("USER").build()));
+		
+		User user = User.builder()
+				.username(request.getUsername())
+				.password(passwordEncoder.encode(request.getPassword()))
+				.roles(Collections.singleton(userRole))
+				.build();
+		userRepository.save(user);
+		return "User registered successfully!!";
+	}
+
+	@Override
+	public String login(AuthRequest request) {
+		authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
+		return jwtTokenUtil.generateToken(request.getUsername());
+	}
+
+	@Override
+	public UserResponseDto getProfile(String username) {
+	    User user = userRepository.findByUsername(username)
+	            .orElseThrow(() -> new RuntimeException("User not found"));
+	    return userMapper.toDto(user);
+	}
+
+
+}

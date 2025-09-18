@@ -1,0 +1,19 @@
+package com.satishlabs.util;
+
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+
+public class TraceUtil {
+
+    public static String getCurrentTraceId() {
+        Span span = Span.current();
+        SpanContext ctx = span.getSpanContext();
+        return ctx.isValid() ? ctx.getTraceId() : "";
+    }
+
+    public static String getCurrentSpanId() {
+        Span span = Span.current();
+        SpanContext ctx = span.getSpanContext();
+        return ctx.isValid() ? ctx.getSpanId() : "";
+    }
+}

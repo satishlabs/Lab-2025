@@ -1,0 +1,5 @@
+package com.satishlabs.config;
+
+public class SecurityConfig {
+
+}

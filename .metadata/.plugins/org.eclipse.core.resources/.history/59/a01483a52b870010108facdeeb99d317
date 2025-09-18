@@ -1,0 +1,8 @@
+package com.satishlabs.dto;
+
+@Data
+@AllArgsConstructor
+public class UserResponse {
+    private String username;
+    private String[] roles;
+}

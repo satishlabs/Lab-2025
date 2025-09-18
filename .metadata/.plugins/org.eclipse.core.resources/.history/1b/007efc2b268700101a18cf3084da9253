@@ -1,0 +1,19 @@
+package com.satishlabs.util.security;
+
+
+import io.jsonwebtoken.security.Keys;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JwtTokenUtil {
+	private final Keys key;
+	private final long jwtExpiration;
+	
+	public JwtTokenUtil(@Value("${jwt.secret}") String secret,
+			@Value("${jwt.expiration}") long jwtExpiration) {
+			this.key = Keys.hmacShaKeyFor(secret.getBytes());
+			this.jwtExpiration = jwtExpiration;
+			}
+}

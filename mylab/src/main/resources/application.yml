@@ -1,0 +1,5 @@
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB   # set file size limit
+      max-request-size: 10MB  # set request size limit

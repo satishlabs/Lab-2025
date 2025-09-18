@@ -1,0 +1,10 @@
+package com.ds.sl;
+
+public class MiddleNode {
+	public static void main(String[] args) {
+		Node node = new Node(10);
+		node.next = new Node(20);
+		node.next.next = new Node(30);
+		node.next.next.next = new Node(40);
+	}
+}

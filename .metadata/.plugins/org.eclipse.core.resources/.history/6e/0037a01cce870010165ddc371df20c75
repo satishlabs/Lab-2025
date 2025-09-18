@@ -1,0 +1,23 @@
+package com.ds.sl;
+
+public class MiddleNode {
+	private static Node head;
+	public static void main(String[] args) {
+		Node node = new Node(10);
+		node.next = new Node(20);
+		node.next.next = new Node(30);
+		node.next.next.next = new Node(40);
+		
+		System.out.println(getMiddleNode(node));
+	}
+
+	private static int getMiddleNode(Node node) {
+		int length = getLengthNode(node);
+		return 0;
+	}
+
+	private static int getLengthNode(Node node) {
+		Node temp = head;
+		return 0;
+	}
+}

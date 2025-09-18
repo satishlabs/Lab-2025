@@ -1,0 +1,7 @@
+package com.satishlabs.validator;
+
+import jakarta.validation.Validator;
+
+public class UserRegistrationValidator implements Validator{
+
+}
