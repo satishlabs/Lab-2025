@@ -1,5 +1,0 @@
-package com.thread.latch;
-
-public class MyRunnable implements Runnable{
-
-}

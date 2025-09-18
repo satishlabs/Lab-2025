@@ -1,5 +1,0 @@
-package com.satishlabs.exception;
-
-public class GlobalExceptionHandler {
-
-}

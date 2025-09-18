@@ -1,5 +1,0 @@
-package com.satishlabs.validator;
-
-public class UserRegistrationValidator implements Validator{
-
-}

@@ -1,5 +1,0 @@
-package com.satishlabs.util.security;
-
-public class JwtTokenUtil {
-
-}

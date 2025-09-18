@@ -2,7 +2,7 @@ package com.arr;
 
 import java.util.HashSet;
 
-public class PrintSumTwoConsecutiveNumbers {
+public class PrintSumTwoConsecutiveNumbers  {
     public static void main(String[] args) {
         int[] arr = {2,4,6,8};
 

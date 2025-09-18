@@ -1,5 +1,0 @@
-package com.satishlabs.security;
-
-public class JwtAuthenticationFilter {
-
-}

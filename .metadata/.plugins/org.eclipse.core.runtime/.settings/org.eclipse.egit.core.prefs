@@ -1,4 +1,4 @@
-GitRepositoriesView.GitDirectories=D\:\\dev-labs\\.git;F\:\\Trex\\consumerprods-pci-token-service\\consumerprods-pci-token-service\\.git;
-GitRepositoriesView.GitDirectories.relative=D\:\\dev-labs\\.git;F\:\\Trex\\consumerprods-pci-token-service\\consumerprods-pci-token-service\\.git;
+GitRepositoriesView.GitDirectories=D\:\\Lab-2025\\.git;D\:\\dev-labs\\.git;F\:\\Trex\\consumerprods-pci-token-service\\consumerprods-pci-token-service\\.git;
+GitRepositoriesView.GitDirectories.relative=.git;D\:\\dev-labs\\.git;F\:\\Trex\\consumerprods-pci-token-service\\consumerprods-pci-token-service\\.git;
 core_autoIgnoreDerivedResources=false
 eclipse.preferences.version=1
