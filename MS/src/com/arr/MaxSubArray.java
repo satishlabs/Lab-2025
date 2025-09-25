@@ -7,7 +7,12 @@ public class MaxSubArray {
         int maxSum = maxSumArray(arr, subArray);
         System.out.println(maxSum);
     }
-
+/*
+Subarrays of size 3:
+{1, 2, 3} → sum = 6 (distinct) ✅
+{2, 3, 2} → sum = 7 (not distinct) ❌
+{3, 2, 5} → sum = 10 (distinct) ✅
+* */
     private static int maxSumArray(int[] arr, int subArray) {
         int n = arr.length;
         int sum=0;
