@@ -12,6 +12,7 @@ public class MergeSortedLists {
         Node merged = merger.merged(list1, list2);
         System.out.println("Merged List: ");
         merger.printList(merged);
+
     }
 
     private Node merged(Node list1, Node list2) {
