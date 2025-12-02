@@ -18,5 +18,17 @@ public class StartWithOne {
                 .filter(num -> Integer.toString(num).startsWith("1"))
                 .collect(Collectors.toList());
         System.out.println(collect1);
+
+        int oddSum = list.stream()
+                .filter(n -> n % 2 == 0)
+                .mapToInt(Integer::valueOf)
+                .sum();
+
+        int evenSum = list.stream()
+                .filter(n -> n%2 != 0)
+                .mapToInt(Integer::valueOf)
+                .sum();
+        System.out.println(oddSum+" "+evenSum);
+
     }
 }
