@@ -6,13 +6,13 @@ import java.util.stream.Collectors;
 public class EmployeeStreamExamples {
     public static void main(String[] args) {
         List<Employee> employeeList = Arrays.asList(
-               new Employee(1,"Satish", 50000.0, "HR"),
-                new Employee(2, "Prasad", 70000.0, "IT"),
-                new Employee(3,"Kumar", 30000.0, "HR"),
-                new Employee(4, "Amir", 35000.0, "IT"),
-                new Employee(5,"Kapil", 90000.0, "CS"),
-                new Employee(6, "Manish", 50000.0, "EC"),
-                new Employee(7, "Kundan", 40000.0, "HR")
+               new Employee(1,"Satish", 50000.0, "HR", "Male"),
+                new Employee(2, "Prasad", 70000.0, "IT", "Male"),
+                new Employee(3,"Kumari", 30000.0, "HR", "Female"),
+                new Employee(4, "Amirta", 35000.0, "IT", "Female"),
+                new Employee(5,"Kapil", 90000.0, "CS", "Male"),
+                new Employee(6, "Manish", 50000.0, "EC", "Male"),
+                new Employee(7, "Kundan", 40000.0, "HR", "Male")
 
         );
 
@@ -84,5 +84,15 @@ public class EmployeeStreamExamples {
         Map<Integer, String> map = employeeList.stream()
                 .collect(Collectors.toMap(Employee::getId, Employee::getName));
         map.forEach((k,v) -> System.out.println(k+" "+v));
+
+        System.out.println("\n How many male and female employees are there in the organization");
+        Map<String, Long> genderCount = employeeList.stream()
+                .collect(Collectors.groupingBy(Employee::getGender, Collectors.counting()));
+        System.out.println(genderCount);
+
+        System.out.println("\n Take out average salary based on employee gender");
+        Map<String, Double> avgSalaryByGender  = employeeList.stream()
+                .collect(Collectors.groupingBy(Employee::getGender, Collectors.averagingDouble(Employee::getSalary)));
+        System.out.println(avgSalaryByGender);
     }
 }
