@@ -13,7 +13,7 @@ public class LengthOfLongestSubstring {
         int left = 0;
         int maxLen = 0;
         int startIndex = 0; //to remember where longest subString starts
-
+        //"abcabcbb"
         for(int i=0; i<s.length(); i++){
             char c = s.charAt(i);
 
