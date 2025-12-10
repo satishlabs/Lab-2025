@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-public class FindKthElementInArray {
+public class FindKthLargestElementInArray {
     static void main() {
         int[] arr = {1, 12, 44, 32, 52, 81, 59, 84, 72, 37};
         int k=4;
