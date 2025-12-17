@@ -24,7 +24,6 @@ public class MaxSumSubArray {
 			sum1 = Math.max(sum1, sum);
 		}
 		
-		System.out.println("HR".equals(null));
 	}
 }
 
