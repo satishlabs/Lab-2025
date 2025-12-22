@@ -1,5 +1,8 @@
 package com.globallogic;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class ReverseStringSamePlace {
     static void main() {
         String str = "I Love India";
@@ -18,5 +21,11 @@ public class ReverseStringSamePlace {
         }
         sb.append(word.reverse());
         System.out.println(sb.toString());
+
+        System.out.println("\n===============================");
+       String result = Arrays.stream(str.split(" "))
+                .map(w -> new StringBuilder(w).reverse().toString())
+                .collect(Collectors.joining(" "));
+        System.out.println(result);
     }
 }
