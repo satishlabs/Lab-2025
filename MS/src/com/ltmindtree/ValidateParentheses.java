@@ -4,7 +4,7 @@ import java.util.Stack;
 
 public class ValidateParentheses {
     static void main() {
-        String str = "{[(]}";
+        String str = "()[]{}";
         if(isParenthesesValid(str)){
             System.out.println("Valid");
         }else{
