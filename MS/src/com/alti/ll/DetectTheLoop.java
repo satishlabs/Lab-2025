@@ -10,12 +10,33 @@ public class DetectTheLoop {
         list.insert(40);
         list.insert(50);
 
-        list.head.next.next.next = list.head;
+        head.next.next.next = head;
 
        // list.display();
 
         System.out.println(list.detectLoop());
+        System.out.println("\n===================s");
+        loopStartingPoint();
 
+    }
+
+    private static void loopStartingPoint() {
+        Node slowP = head;
+        Node fastP = head;
+        while(slowP != null && fastP != null && fastP.next != null){
+            slowP = slowP.next;
+            fastP = fastP.next.next;
+            if(slowP == fastP){
+                System.out.println("Loop detected and started from");
+                break;
+            }
+        }
+        slowP = head;
+        while(slowP != fastP){
+            slowP = slowP.next;
+            fastP = fastP.next;
+        }
+        System.out.println("Loop starting position: "+slowP.data);
     }
 
     private boolean detectLoop() {
