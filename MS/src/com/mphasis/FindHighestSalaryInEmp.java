@@ -14,5 +14,10 @@ public class FindHighestSalaryInEmp {
         Map<String, Optional<Employee>> collect = employeeList.stream()
                 .collect(Collectors.groupingBy(Employee::getDepartment, Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))));
                 collect.forEach((k,v)-> System.out.println(k+" "+v));
+
+        //Find the Employee , who is having highest salary
+        Optional<Employee> max = employeeList.stream()
+                .max(Comparator.comparingDouble(Employee::getSalary));
+        System.out.println(max);
     }
 }
