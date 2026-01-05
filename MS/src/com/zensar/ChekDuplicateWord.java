@@ -18,7 +18,7 @@ public class ChekDuplicateWord {
         if(collect.isEmpty()){
             System.out.println("No duplicate found");
         }else{
-            System.out.println("duplicate found:" +collect);
+            System.out.println("Duplicate found:" +collect);
         }
     }
 }
