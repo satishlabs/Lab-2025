@@ -4,16 +4,17 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public record Employee(int id, String name, double salary) {
+public record Employee(int id, String name, double salary, String depart) {
 
     static void main() {
         List<Employee> employees = Arrays.asList(
-                new Employee(1, "Rahul", 70000),
-                new Employee(2, "Amit", 90000),
-                new Employee(3, "Neha", 70000),
-                new Employee(4, "Pooja", 90000),
-                new Employee(5, "Ankit", 70000)
+                new Employee(1, "Rahul", 70000, "IT"),
+                new Employee(2, "Amit", 90000, "HR"),
+                new Employee(3, "Neha", 70000, "HR"),
+                new Employee(4, "Pooja", 90000, "CS"),
+                new Employee(5, "Ankit", 70000, "IT")
         );
 
         //Sort by Salary(ASC) -> then name (ASC)
@@ -38,5 +39,9 @@ public record Employee(int id, String name, double salary) {
                 return salary;
             }
         });
+        System.out.println("\n==========================");
+        employees.stream()
+                .collect(Collectors.groupingBy(Employee::depart, Collectors.maxBy(Comparator.comparingDouble(Employee::salary))))
+                .forEach((k,v) -> System.out.println(k+" "+v));
     }
 }
