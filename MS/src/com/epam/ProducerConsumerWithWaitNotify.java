@@ -10,7 +10,5 @@ public class ProducerConsumerWithWaitNotify {
         producerThread.start();
         Thread.sleep(100);
         consumerThread.start();
-
-
     }
 }

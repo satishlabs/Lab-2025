@@ -23,7 +23,6 @@ public class FindAllPairOfTarget {
                 right--;
             } else if (sum < target) {
                 left++;
-
             }else{
                 right--;
             }
