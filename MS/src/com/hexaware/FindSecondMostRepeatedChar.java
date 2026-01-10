@@ -22,5 +22,18 @@ public class FindSecondMostRepeatedChar {
                 .findFirst()
                 .orElse(null);
         System.out.println(result);
+
+        System.out.println("\n========================");
+       Character chr = str.chars()
+                .mapToObj(c -> (char)c)
+                .collect(Collectors.groupingBy(c -> c, Collectors.counting()))
+                .entrySet()
+                .stream()
+                .sorted((e1, e2) ->Long.compare(e2.getValue(), e1.getValue()))
+                .skip(1)
+                .map(Map.Entry::getKey)
+                .findFirst()
+                .orElse(null);
+        System.out.println(chr);
     }
 }

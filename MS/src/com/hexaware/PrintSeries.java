@@ -14,5 +14,12 @@ public class PrintSeries {
                 .limit(5)
                 .map(i -> start+i*i)
                 .forEach(System.out::println);
+
+        System.out.println("\n=======================");
+        int sum = 0;
+        for(int i=0; i<5; i++){
+            sum = start+i*i;
+            System.out.println(sum);
+        }
     }
 }
