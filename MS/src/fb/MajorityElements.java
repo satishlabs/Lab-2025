@@ -7,12 +7,12 @@ import java.util.Map;
 public class MajorityElements {
     static void main() {
 
-        int[] arr = {2, 2, 1, 2, 3, 2, 2, 3, 3};
-        System.out.println(findMajorityElement(arr));
+        int[] arr = {3, 2, 1, 2, 3, 2};
+        System.out.println("t1 "+findMajorityElement(arr));
         System.out.println("\n======================");
-        System.out.println(findMajorityElement1(arr));
+        System.out.println("t2 "+findMajorityElement1(arr));
         System.out.println("\n======================");
-        System.out.println(findMajorityElement2(arr));
+        System.out.println("t3 "+findMajorityElement2(arr));
 
     }
 
@@ -33,6 +33,7 @@ public class MajorityElements {
     }
 
     private static int findMajorityElement(int[] arr) {
+        Arrays.sort(arr);
         int candidate=0;
         int count = 0;
 
