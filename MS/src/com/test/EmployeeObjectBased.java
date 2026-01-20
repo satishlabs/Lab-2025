@@ -100,5 +100,13 @@ public class EmployeeObjectBased {
                 .stream()
                 .collect(Collectors.groupingBy(Employee::department, Collectors.groupingBy(Employee::gender,Collectors.counting())));
         System.out.println(result);
+        System.out.println("\n============================");
+        //12 Count Male and Female
+        System.out.println("11. Count Male and Female");
+        Map<String, Long> genderCount = employees
+                .stream()
+                .collect(Collectors.groupingBy(Employee::gender, Collectors.counting()));
+        System.out.println(genderCount);
+
     }
 }
