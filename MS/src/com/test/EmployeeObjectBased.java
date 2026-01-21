@@ -107,6 +107,11 @@ public class EmployeeObjectBased {
                 .stream()
                 .collect(Collectors.groupingBy(Employee::gender, Collectors.counting()));
         System.out.println(genderCount);
-
+        System.out.println("\n============================");
+        //13 Avg salary based on emp gender
+        System.out.println("13. Avg salary based on emp gender.");
+        Map<String, Double> collect2 = employees.stream()
+                .collect(Collectors.groupingBy(Employee::gender, Collectors.averagingDouble(Employee::salary)));
+        System.out.println(collect2);
     }
 }

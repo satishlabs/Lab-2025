@@ -3,7 +3,7 @@ package com.str;
 import java.util.Arrays;
 import java.util.List;
 
-public class LongestStringPlaindrom {
+public class LongestStringPalindrom {
 	public static void main(String[] args) {
 		String str = "babad";
 		System.out.println(longestSubstringPalindrom(str));
