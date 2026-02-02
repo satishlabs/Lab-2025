@@ -21,7 +21,9 @@ public class FindSumAlternative {
         }
         double average = (count > 0) ? (double) sum / count : 0;
         System.out.println("sum : "+sum);
+        System.out.println("AVG: "+avg+", Count: "+count);
         System.out.println("average: "+average);
+
 
         System.out.println("\n===========================");
        int sumAlternative = IntStream.range(0, list.size())
