@@ -36,5 +36,13 @@ public class FindSumAlternative {
                .map(i-> list.get(i))
                        .average();
         System.out.println("Avg of alternative elements : "+avg1);
+        System.out.println("\n===================================");
+        int[] arr = {1,5,-8,3,6,5,-7,-5};
+        Arrays.stream(arr)
+                .filter(n ->n <0)
+                .average().ifPresent(System.out::println);
+        System.out.println(Arrays.stream(arr)
+                .filter(n -> n > 0)
+                .sum());
     }
 }
