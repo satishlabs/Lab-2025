@@ -1,6 +1,6 @@
 package com.alti.arr;
 
-public class SubarraySumIndex {
+public class FindAllSubarraySumIndex {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 7, 5};
         int target = 12;
@@ -10,6 +10,7 @@ public class SubarraySumIndex {
     private static void indexOfSubArraySum(int[] arr, int target) {
         int left = 0;
         int sum = 0;
+        boolean found = false;
        for(int i=0; i<arr.length; i++){
            sum += arr[i];
            while(sum > target && left <= i){
@@ -19,9 +20,13 @@ public class SubarraySumIndex {
 
            if(sum == target){
                System.out.println("Subarray from index " + left + " to " + i);
-               return;
+               found = true;
+               sum -= arr[left];
+               left++;
            }
        }
-        System.out.println("No Subarray found");
+        if(!found){
+            System.out.println("No Subarray found!");
+        }
     }
 }

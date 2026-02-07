@@ -13,6 +13,11 @@ public class FindDistinctElements {
         for(int num: distinctArr){
             System.out.println(num);
         }
+        System.out.println("\n========================");
+        Arrays.stream(arr)
+                        .distinct()
+                                .forEach(System.out::println);
+
         System.out.println("\n =========================");
         List<String> names = Arrays.asList("apple", "banana", "apple", "orange");
         names.stream()

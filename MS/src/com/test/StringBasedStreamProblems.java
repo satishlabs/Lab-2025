@@ -37,7 +37,7 @@ public class StringBasedStreamProblems {
         System.out.println(secondRepeated);
         System.out.println("\n=================================");
         System.out.println("\n 3.  ⃣All non-repeated characters");
-        Stream<Character> characterStream = "satihs".chars()
+        Stream<Character> characterStream = "satish".chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(c -> c, LinkedHashMap::new, Collectors.counting()))
                 .entrySet()
@@ -136,6 +136,33 @@ public class StringBasedStreamProblems {
         IntStream.range(0, str1.length())
                 .forEach(i -> IntStream.range(i+1, str1.length()+1)
                         .forEach(j -> System.out.println(str1.substring(i,j))));
+        System.out.println("\n=================================");
+        //12. From a list of list of strings, find all strings starting with “S”
+        System.out.println("\n 12. From a list of list of strings, find all strings starting with “S”");
+        List<List<String>> list = List.of(
+                List.of("Satish","Prasad"),
+                List.of("Kumar", "Santosh")
+        );
+        list.stream()
+                .flatMap(List::stream)
+                .filter(n ->n.startsWith("S"))
+                .toList()
+                .forEach(System.out::println);
+        System.out.println("\n=================================");
+        //13. From a list of integers: filter even numbers, square them, and skip the first 1 and last 2 elements using streams
+        System.out.println("\n From a list of integers: filter even numbers, square them, and skip the first 1 and last 2 elements using streams");
+        List<Integer> intList = List.of(1, 2, 3, 4, 5, 6, 7, 8);
+        List<Integer> temp = intList.stream()
+                .filter(n -> n % 2 == 0)
+                .map(n -> n * n)
+                .toList();
+        System.out.println(temp);
+        List<Integer> result1 = temp.stream()
+                .skip(1)
+                .limit(Math.max(0, temp.size() - 1 - 2))
+                .toList();
+
+        System.out.println(result1);
     }
 
     private static boolean isAnagram(String s1, String s2) {
