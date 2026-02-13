@@ -3,6 +3,7 @@ package com.alti.stream;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SortEmployees {
     public static void main(String[] args) {
@@ -27,5 +28,11 @@ public class SortEmployees {
                         .filter(emp ->"HR".equalsIgnoreCase(emp.getDepartment()))
                 .mapToDouble(Employee::getSalary)
                 .sum());
+        System.out.println("\n===================================");
+        //sort ind desc salary, asc ->also name
+        employeeList.stream()
+                .sorted(Comparator.comparing(Employee::getSalary).reversed().thenComparing(Employee::getName))
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
     }
 }
