@@ -2,7 +2,7 @@ package com.photons;
 
 public class RemoveStar {
     static void main() {
-        String str = "satish**sh";
+        String str = "sat**ish**";
         System.out.println(removeStars(str));
     }
 
