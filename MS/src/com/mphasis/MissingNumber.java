@@ -6,7 +6,7 @@ import java.util.Set;
 public class MissingNumber {
     static void main() {
         int[] arr1 = {1, 2, 2, 3, 4};
-        int[] arr2 = {1, 2, 3, 3, 5};
+        int[] arr2 = {1, 2, 3, 3, 5,5};
 
         System.out.println(findMissing(arr1)); // 5
         System.out.println(findMissing(arr2)); // 4

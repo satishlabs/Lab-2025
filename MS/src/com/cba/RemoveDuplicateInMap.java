@@ -50,5 +50,15 @@ public class RemoveDuplicateInMap {
                         LinkedHashMap::new
                 ));
         System.out.println(result);
+        System.out.println("\n=============================");
+        map.entrySet()
+                .stream()
+                .filter(e ->set.add(e.getValue()))
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (a,b)->a,
+                        LinkedHashMap::new
+                )).forEach((k,v)-> System.out.println(k+" "+v));
     }
 }

@@ -1,3 +1,4 @@
+/*
 package com.queues;
 
 public class CircularQueueMain {
@@ -13,3 +14,4 @@ public class CircularQueueMain {
 		q.printQueue();
 	}
 }
+*/
