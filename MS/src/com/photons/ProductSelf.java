@@ -23,7 +23,7 @@ public class ProductSelf {
             result[i] = result[i-1]*arr[i-1];
         }
         int suffix = 1;
-        for(int i=n; i>=0; i--){
+        for(int i=n-1; i>=0; i--){
             result[i] = result[i]*suffix;
             suffix *= arr[i];
         }
