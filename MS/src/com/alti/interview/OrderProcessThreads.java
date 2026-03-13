@@ -26,3 +26,20 @@ public class OrderProcessThreads {
         t3.join();
     }
 }
+/*
+Main Thread
+     │
+     ├─ start t2 (sleep 100ms)
+     │
+     ├─ start t1
+     │      │
+     │      └─ Track order
+     │
+     ├─ wait for t1 (join)
+     │
+     ├─ start t3 (sleep 200ms)
+     │
+     ├─ t2 wakes → Payment successful
+     │
+     └─ t3 wakes → Order placed successfully
+* */
