@@ -1,4 +1,4 @@
-package codingblocks;
+package com.codingblocks;
 
 import java.util.*;
 
