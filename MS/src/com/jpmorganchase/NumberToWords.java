@@ -15,7 +15,7 @@ public class NumberToWords {
             "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
     };
     static void main() {
-        int number = 54;
+        int number = 2221;
         System.out.println(convert(number));
     }
 

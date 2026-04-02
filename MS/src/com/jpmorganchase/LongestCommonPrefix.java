@@ -3,6 +3,7 @@ package com.jpmorganchase;
 public class LongestCommonPrefix {
     static void main(String[] args) {
         String[] arr = {"flower","flow","flight"};
+
         System.out.println(longestCommonPrefix(arr));
     }
 
